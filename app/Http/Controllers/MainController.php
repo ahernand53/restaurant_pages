@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function index(){
 
-        $foods = Food::get();
+        $foods = Food::paginate(5);
         $sliders = Sliders::all();
 
         return view('welcome', [

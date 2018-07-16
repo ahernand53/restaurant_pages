@@ -14,3 +14,7 @@
 Route::get('/', 'MainController@index');
 
 Route::get('/menu', 'FoodController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
