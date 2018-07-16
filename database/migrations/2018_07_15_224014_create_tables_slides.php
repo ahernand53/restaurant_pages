@@ -13,7 +13,7 @@ class CreateTablesSlides extends Migration
      */
     public function up()
     {
-        Schema::create('slides', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', '80');
             $table->string('content', '250');
