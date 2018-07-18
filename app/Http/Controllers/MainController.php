@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $foods = Food::paginate(5);
         $sliders = Sliders::all();

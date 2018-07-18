@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+    {{-- todo Terminar el home--}}
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             @for($i=0; $i<count($sliders); $i++)
@@ -23,7 +23,7 @@
                                 <div class="container">
                                     <h1 class="display-4">{{ $slider->title }}</h1>
                                     <p class="lead">{{ $slider->content }}</p>
-                                    <a class="btn btn-outline-light" href="">Leer más</a>
+                                    <a class="btn btn-outline-light" href="/promotions">Leer más</a>
                                 </div>
                             </div>
                         </div>

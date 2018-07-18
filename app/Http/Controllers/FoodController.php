@@ -11,4 +11,10 @@ class FoodController extends Controller
         return view('menu');
 
     }
+
+    public function promotions(){
+
+        return view('foods/promotions');
+
+    }
 }
