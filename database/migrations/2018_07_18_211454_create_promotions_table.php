@@ -15,11 +15,9 @@ class CreatePromotionsTable extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('food_id');
             $table->double('promotion');
             $table->timestamps();
 
-            $table->foreign('food_id')->references('id')->on('foods');
         });
     }
 
@@ -31,5 +29,6 @@ class CreatePromotionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('promotions');
+
     }
 }

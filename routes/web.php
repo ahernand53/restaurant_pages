@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/promotions', 'FoodController@promotions');
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/menus', 'AdminController@menus');
+Route::get('/admin/menus/search/{menu}', 'AdminController@searchMenu');

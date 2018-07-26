@@ -57,6 +57,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="admin/">Config</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -68,6 +70,7 @@
             </div>
         </nav>
 
+        @yield('slider')
         <main class="py-4">
             @yield('content')
         </main>

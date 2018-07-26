@@ -11,9 +11,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*$creator = factory(App\Creators::class, 10)->create();
-        $food = factory(App\Food::class, 50)->create();
-        $slides = factory(App\Sliders::class, 4)->create();*/
-        $promotion = factory(\App\Promotion::class, 6)->create();
+//        $slides = factory(App\Sliders::class, 4)->create();
+        $menus = factory(App\Menu::class, 10)->create();
+        /*
+                $creators = factory(App\Creators::class, 30)->create();
+
+                $creators->each(function (App\Creators $creator) use ($creators){
+                    $foods = factory(App\Food::class)
+                        ->times(10)
+                        ->create([
+                            'creator_id' => $creator->id,
+                            'creator_id' => $creator->specialization,
+                        ]);
+
+
+                });*/
     }
 }

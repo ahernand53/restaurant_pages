@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
+@section('slider')
 
-@section('content')
-    {{-- todo Terminar el home--}}
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 10px" >
         <ol class="carousel-indicators">
             @for($i=0; $i<count($sliders); $i++)
                 @if($i>0)
@@ -13,11 +12,11 @@
                 @endif
             @endfor
         </ol>
-        <div class="carousel-inner shadow-sm">
+        <div class="carousel-inner shadow-sm" style="height: 100vh;">
             @foreach($sliders as $slider)
                 @if($slider->active === 1)
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ $slider->image }}" alt="{{ $slider->title }}">
+                        <img  class="d-block w-100" src="{{ $slider->image }}" alt="{{ $slider->title }}">
                         <div class="carousel-caption">
                             <div class="jumbotron jumbotron-fluid rounded shadow" style="opacity: 0.5; background: #1b1e21">
                                 <div class="container">
@@ -46,8 +45,12 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 30px">
-        <div class="row">
+@endsection
+
+@section('content')
+
+    <div class="container">
+        <div class="row" style="margin-top: 30px">
             <div class="col-12 d-flex justify-content-around">
                 <a href="">
                     <img class="rounded-circle" src="https://lorempixel.com/200/200/food/?1" alt="">

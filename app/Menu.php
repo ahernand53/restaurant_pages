@@ -4,17 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-class Food extends Model
+class Menu extends Model
 {
     protected $guarded = [];
-    protected $hidden = ['status'];
 
-    public function allMenus(){
+    public function foods() {
 
         return $this->belongsToMany('App\Food');
 
     }
-
-
 }
