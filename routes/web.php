@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/menus', 'AdminController@menus');
-Route::get('/admin/menus/search/{menu}', 'AdminController@searchMenu');
+Route::prefix('admin')->group(function () {
+    Route::get('', 'AdminController@index');
+    Route::get('menus', 'AdminController@menus');
+    Route::get('menus/search/{menu}', 'AdminController@searchMenu');
+});
+

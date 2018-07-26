@@ -4,17 +4,23 @@
 
     <div class="container">
         <div class="row">
+            <h1>Foods</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-success" href="">Add</a>
+            </div>
+        </div>
+        <div class="row">
             @foreach($foods as $food)
-                <p>
-                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Menu {{ $food->id }}
-                    </a>
-                </p>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">{{ $food->title }}</p>
+                        <a href="" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
