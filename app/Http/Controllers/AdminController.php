@@ -25,7 +25,25 @@ class AdminController extends Controller
 
     public function searchMenu(Request $request){
         $foods = Menu::find($request->menu)->foods;
-        return view('admin.search', ['foods' => $foods]);
+        return view('admin.search', ['foods' => $foods, 'menu_id' => $request->menu]);
 
+    }
+
+    public function addMenu(Request $request){
+        $foods = Menu::find($request->menu)->foods;
+        dd($foods);
+        if(count($foods) >= 4 ){
+            $message = 'El menu tiene un limite de 4 comidas';
+            return view('admin.search', [
+                'message' => $message,
+                'foods' => $foods,
+                'menu_id' => $request->menu
+            ]);
+        }else {
+            $allFoods = Food::all();
+            return view('admin.menus.add', [
+                'foods' => $allFoods,
+            ]);
+        }
     }
 }
