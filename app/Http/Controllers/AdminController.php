@@ -41,9 +41,22 @@ class AdminController extends Controller
             ]);
         }else {
             $allFoods = Food::all();
-            return view('admin.menus.add', [
+            return view('admin.menu.add', [
                 'foods' => $allFoods,
             ]);
         }
+    }
+
+    public function delMenu(Request $request){
+
+        $menu = Menu::find($request->id);
+        if($menu != null){
+//            $menu->delete();
+            $message = 'Menu Eliminado';
+            $menus = Menu::all();
+            return view('admin.menus', ['menus' => $menus, 'message' => $message]);
+        }
+        dd($menu);
+
     }
 }

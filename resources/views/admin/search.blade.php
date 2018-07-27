@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a class="btn btn-success" href="">Add</a>
+                <a class="btn btn-success" href="{{ $menu_id }}/add"><i class="fas fa-plus"></i></a>
             </div>
         </div>
         <div class="row">
@@ -17,7 +17,9 @@
                 <div class="card">
                     <div class="card-body">
                         <p class="card-title">{{ $food->title }}</p>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="" class="btn" style="color: red;">
+                            <i class="fas fa-trash-alt"></i>{{--Delete--}}
+                        </a>
                     </div>
                 </div>
             </div>

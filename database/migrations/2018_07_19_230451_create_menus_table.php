@@ -13,7 +13,7 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('promotion_id');
             $table->enum('dia',[
@@ -34,9 +34,9 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::table('menus', function (Blueprint $tables){
+        Schema::table('menu', function (Blueprint $tables){
             $tables->dropForeign('menus_promotion_id_foreign');
         });
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu');
     }
 }

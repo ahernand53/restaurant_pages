@@ -12,13 +12,13 @@
                 @endif
             @endfor
         </ol>
-        <div class="carousel-inner shadow-sm" style="height: 100vh;">
+        <div class="carousel-inner shadow-sm" >
             @foreach($sliders as $slider)
                 @if($slider->active === 1)
                     <div class="carousel-item active">
                         <img  class="d-block w-100" src="{{ $slider->image }}" alt="{{ $slider->title }}">
                         <div class="carousel-caption">
-                            <div class="jumbotron jumbotron-fluid rounded shadow" style="opacity: 0.5; background: #1b1e21">
+                            <div class="jumbotron jumbotron-fluid rounded shadow" style="opacity: 0.5; background: #1b1e21; width: 100%;">
                                 <div class="container">
                                     <h1 class="display-4">{{ $slider->title }}</h1>
                                     <p class="lead">{{ $slider->content }}</p>

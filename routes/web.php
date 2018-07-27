@@ -21,8 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'],function () {
     Route::get('', 'AdminController@index');
-    Route::get('menus', 'AdminController@menus');
-    Route::get('menus/search/{menu}', 'AdminController@searchMenu');
-    Route::get('menus/search/{menu}/add', 'AdminController@addMenu');
+    Route::get('menu', 'AdminController@menus');
+    Route::get('menu/search/{menu}', 'AdminController@searchMenu');
+    Route::get('menu/search/{menu}/add', 'AdminController@addMenu');
+    Route::post('menu/delete', 'AdminController@delMenu');
 });
 

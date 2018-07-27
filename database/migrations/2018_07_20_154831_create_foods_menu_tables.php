@@ -20,7 +20,7 @@ class CreateFoodsMenuTables extends Migration
             $table->timestamps();
 
             $table->foreign('foods_id')->references('id')->on('foods');
-            $table->foreign('menus_id')->references('id')->on('menus');
+            $table->foreign('menus_id')->references('id')->on('menu');
         });
     }
 
